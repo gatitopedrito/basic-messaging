@@ -56,7 +56,17 @@ function sendMessage() {
 }
 
 
-renderMessages();
+function addMessage(user, text) {
+  const box = document.getElementById("messages");
+
+  const div = document.createElement("div");
+  div.className = "message";
+  div.innerHTML = `<span class="username">[${user}]</span> ${text}`;
+
+  box.appendChild(div);
+  box.scrollTop = box.scrollHeight;
+}
+
 
 db.ref("messages").on("child_added", snapshot => {
   const msg = snapshot.val();
