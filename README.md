@@ -1,3 +1,1 @@
-use link
-idk what to say figure it out lol
-if it doesnt work, dont worry, this is under construction
+under construction, messages wont appear, read commits and issues to learn more. pls help lolz
