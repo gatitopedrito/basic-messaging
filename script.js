@@ -1,3 +1,19 @@
+// ----------------------
+// Firebase Setup (v8)
+// ----------------------
+const firebaseConfig = {
+  apiKey: "YOUR-KEY",
+  authDomain: "YOUR-DOMAIN",
+  databaseURL: "YOUR-DATABASE-URL",
+  projectId: "YOUR-PROJECT-ID",
+  storageBucket: "YOUR-BUCKET",
+  messagingSenderId: "YOUR-SENDER-ID",
+  appId: "YOUR-APP-ID"
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+
 let messages = JSON.parse(localStorage.getItem("messages")) || [];
 let username = localStorage.getItem("username") || "User";
 
