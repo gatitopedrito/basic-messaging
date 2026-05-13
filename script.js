@@ -57,3 +57,8 @@ function sendMessage() {
 
 
 renderMessages();
+
+db.ref("messages").on("child_added", snapshot => {
+  const msg = snapshot.val();
+  addMessage(msg.user, msg.text);
+});
