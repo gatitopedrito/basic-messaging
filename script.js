@@ -10,10 +10,10 @@ const firebaseConfig = {
   messagingSenderId: "662612762605",
   appId: "1:662612762605:web:6b70b16dd14299877111e4",
   measurementId: "G-8SGZ5XC25D"
-};
-
-firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
+
+};
 
 let messages = JSON.parse(localStorage.getItem("messages")) || [];
 let username = localStorage.getItem("username") || "User";
