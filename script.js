@@ -1,7 +1,6 @@
 // ----------------------
 // Firebase Setup (v8)
 // ----------------------
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBC7tvx3rv2Azjbxe8vk3R56hxK2B73_Vw",
   authDomain: "gatitopedrito-messaging.firebaseapp.com",
@@ -17,13 +16,15 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
-let messages = JSON.parse(localStorage.getItem("messages")) || [];
+
+// ----------------------
+// Username + Messages
+// ----------------------
 let username = localStorage.getItem("username") || "User";
 
 function setUsername() {
   const input = document.getElementById("usernameInput");
   const name = input.value.trim();
-
   if (name === "") return;
 
   username = name;
@@ -31,20 +32,10 @@ function setUsername() {
   input.value = "";
 }
 
-function renderMessages() {
-  const box = document.getElementById("messages");
-  box.innerHTML = "";
 
-  messages.forEach(msg => {
-    const div = document.createElement("div");
-    div.className = "message";
-    div.innerHTML = `<span class="username">[${msg.user}]</span> ${msg.text}`;
-    box.appendChild(div);
-  });
-
-  box.scrollTop = box.scrollHeight;
-}
-
+// ----------------------
+// Send Message
+// ----------------------
 function sendMessage() {
   const input = document.getElementById("msgInput");
   const text = input.value.trim();
@@ -59,6 +50,9 @@ function sendMessage() {
 }
 
 
+// ----------------------
+// Add Message to Screen
+// ----------------------
 function addMessage(user, text) {
   const box = document.getElementById("messages");
 
@@ -71,6 +65,9 @@ function addMessage(user, text) {
 }
 
 
+// ----------------------
+// Live Listener
+// ----------------------
 db.ref("messages").on("child_added", snapshot => {
   const msg = snapshot.val();
   addMessage(msg.user, msg.text);
