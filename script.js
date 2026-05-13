@@ -12,13 +12,13 @@ const firebaseConfig = {
   measurementId: "G-8SGZ5XC25D"
 };
 
-// Initialize Firebase (OUTSIDE the config object)
+// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
 
 // ----------------------
-// Username + Messages
+// Username
 // ----------------------
 let username = localStorage.getItem("username") || "User";
 
