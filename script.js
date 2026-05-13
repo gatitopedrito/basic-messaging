@@ -5,15 +5,17 @@
 const firebaseConfig = {
   apiKey: "AIzaSyBC7tvx3rv2Azjbxe8vk3R56hxK2B73_Vw",
   authDomain: "gatitopedrito-messaging.firebaseapp.com",
+  databaseURL: "https://gatitopedrito-messaging-default-rtdb.firebaseio.com",
   projectId: "gatitopedrito-messaging",
-  storageBucket: "gatitopedrito-messaging.firebasestorage.app",
+  storageBucket: "gatitopedrito-messaging.appspot.com",
   messagingSenderId: "662612762605",
   appId: "1:662612762605:web:6b70b16dd14299877111e4",
   measurementId: "G-8SGZ5XC25D"
-  firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
-
 };
+
+// Initialize Firebase (OUTSIDE the config object)
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
 
 let messages = JSON.parse(localStorage.getItem("messages")) || [];
 let username = localStorage.getItem("username") || "User";
