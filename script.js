@@ -1,12 +1,12 @@
 // ----------------------
 // Firebase Setup (v8)
 // ----------------------
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBC7tvx3rv2Azjbxe8vk3R56hxK2B73_Vw",
   authDomain: "gatitopedrito-messaging.firebaseapp.com",
-  databaseURL: "https://gatitopedrito-messaging-default-rtdb.firebaseio.com",
   projectId: "gatitopedrito-messaging",
-  storageBucket: "gatitopedrito-messaging.appspot.com",
+  storageBucket: "gatitopedrito-messaging.firebasestorage.app",
   messagingSenderId: "662612762605",
   appId: "1:662612762605:web:6b70b16dd14299877111e4",
   measurementId: "G-8SGZ5XC25D"
