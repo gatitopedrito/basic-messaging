@@ -1,11 +1,20 @@
 body {
-  background: #000;
+  background: linear-gradient(270deg, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000, #ffff00, #00ff00);
+  background-size: 2000% 2000%;
+  animation: rainbow 12s ease infinite;
   color: #00ff00;
   font-family: Consolas, monospace;
   display: flex;
   justify-content: center;
   margin-top: 40px;
 }
+
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 .app {
   width: 400px;
