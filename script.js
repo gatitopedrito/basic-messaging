@@ -45,14 +45,15 @@ function renderMessages() {
 function sendMessage() {
   const input = document.getElementById("msgInput");
   const text = input.value.trim();
-
   if (text === "") return;
 
-  messages.push({ user: username, text });
-  localStorage.setItem("messages", JSON.stringify(messages));
+  db.ref("messages").push({
+    user: username,
+    text: text
+  });
 
   input.value = "";
-  renderMessages();
 }
+
 
 renderMessages();
